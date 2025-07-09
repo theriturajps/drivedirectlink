@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DriveDirectLink - Convert Google Drive sharing links to direct download links instantly. Fast, secure, and free Google Drive link converter tool.">
+    <meta name="keywords" content="google drive direct link, drive download link converter, gdrive direct download, google drive link generator, drive file direct link">
+    <meta name="author" content="DriveDirectLink">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theriturajps.github.io/drivedirectlink/">
+    <meta property="og:title" content="DriveDirectLink - Google Drive Direct Download Link Converter">
+    <meta property="og:description" content="Convert Google Drive sharing links to direct download links instantly. Fast, secure, and free tool for generating direct download URLs from Google Drive files.">
+    <meta property="og:image" content="https://theriturajps.github.io/drivedirectlink/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://theriturajps.github.io/drivedirectlink/">
+    <meta property="twitter:title" content="DriveDirectLink - Google Drive Direct Download Link Converter">
+    <meta property="twitter:description" content="Convert Google Drive sharing links to direct download links instantly. Fast, secure, and free tool.">
+    <meta property="twitter:image" content="https://theriturajps.github.io/drivedirectlink/twitter-image.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://theriturajps.github.io/drivedirectlink/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "DriveDirectLink",
+        "description": "Convert Google Drive sharing links to direct download links instantly",
+        "url": "https://theriturajps.github.io/drivedirectlink/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "DriveDirectLink"
+        }
+    }
+    </script>
+    
+    <title>DriveDirectLink - Free Google Drive Direct Download Link Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-gradient"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                        <path d="M12 18l-4-4 4-4"/>
+                        <path d="m8 14 4 0"/>
+                    </svg>
+                </div>
+                <span class="brand-text">DriveDirectLink</span>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-badge">
+                    <span class="badge-icon">⚡</span>
+                    <span>Instant Conversion</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Google Drive to
+                    <span class="gradient-text">Direct Download</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Convert Google Drive sharing links to direct download URLs instantly. 
+                    Free, secure, and works on all devices.
+                </p>
+                
+                <!-- Converter Tool -->
+                <div class="converter-tool">
+                    <div class="input-container">
+                        <input 
+                            type="url" 
+                            id="driveLink" 
+                            class="link-input" 
+                            placeholder="Paste your Google Drive link here..."
+                            spellcheck="false"
+                        >
+                        
+                        <button id="convertBtn" class="convert-button">
+                            <span class="btn-text">Convert</span>
+                            <div class="btn-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"/>
+                                </svg>
+                            </div>
+                            <div class="btn-loading">
+                                <div class="spinner"></div>
+                            </div>
+                        </button>
+                    </div>
+                    
+                    <!-- Result Section -->
+                    <div id="result" class="result-container" style="display: none;">
+                        <div class="result-header">
+                            <div class="success-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </div>
+                            <span>Direct Link Generated!</span>
+                        </div>
+                        
+                        <div class="result-content">
+                            <input type="text" id="directLink" class="result-input" readonly>
+                            <button id="copyBtn" class="copy-button">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Error Section -->
+                    <div id="error" class="error-container" style="display: none;">
+                        <div class="error-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="15" y1="9" x2="9" y2="15"/>
+                                <line x1="9" y1="9" x2="15" y2="15"/>
+                            </svg>
+                        </div>
+                        <span id="errorText"></span>
+                    </div>
+                </div>
+                
+                <!-- Trust Indicators -->
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span class="trust-icon">🔒</span>
+                        <span>Secure</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">⚡</span>
+                        <span>Instant</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">🆓</span>
+                        <span>Free</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="section-container">
+                <h2 class="section-title">Why Choose DriveDirectLink?</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                            </svg>
+                        </div>
+                        <h3>Lightning Fast</h3>
+                        <p>Convert links instantly with our optimized algorithm.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3>100% Secure</h3>
+                        <p>All processing happens locally in your browser.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3>All Devices</h3>
+                        <p>Works perfectly on desktop, mobile, and tablet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <div class="section-container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <p>Get your Google Drive sharing link</p>
+                    </div>
+                    <div class="step-arrow">→</div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <p>Paste it in the converter above</p>
+                    </div>
+                    <div class="step-arrow">→</div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <p>Get your direct download link</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="section-container">
+                <h2 class="section-title">FAQ</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What is a Google Drive direct download link?</span>
+                            <div class="faq-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="faq-answer">
+                            <p>A direct download link allows users to download files from Google Drive without opening the Google Drive interface. It bypasses the preview page and starts the download immediately.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is it safe to use this converter?</span>
+                            <div class="faq-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, it's completely safe. Our tool processes links locally in your browser without sending any data to external servers. Your privacy and security are our top priorities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Why isn't my Google Drive link working?</span>
+                            <div class="faq-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Make sure your Google Drive file is set to "Anyone with the link" sharing permissions. Private files or files with restricted access won't work with direct download links.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <path d="M12 18l-4-4 4-4"/>
+                            <path d="m8 14 4 0"/>
+                        </svg>
+                    </div>
+                    <span class="brand-text">DriveDirectLink</span>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#features">Features</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 DriveDirectLink. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" onclick="showPrivacyPolicy()">Privacy</a>
+                    <a href="#" onclick="showTerms()">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
